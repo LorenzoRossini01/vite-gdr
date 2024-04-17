@@ -10,6 +10,10 @@ export default {
   props: {
     characters: Object,
   },
+
+  methods: {
+
+  }
 };
 </script>
 
@@ -17,7 +21,9 @@ export default {
   <div class="row row-cols-3 g-3">
     <div class="col" v-for="character in characters">
       <div class="card h-100">
-        <img :src="character.type.Image" class="card-img-top" alt="..." />
+      
+        <img :src="character.image" class="card-img-top" alt="..." />
+       
         <div class="card-body">
           <h5 class="card-title">{{ character.name }}</h5>
           <p class="card-text">

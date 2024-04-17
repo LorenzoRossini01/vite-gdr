@@ -26,7 +26,7 @@ export default {
     fetchCharacters(endpoint = this.apiEndpoint) {
       axios.get(endpoint).then((response) => {
         console.log(response.data);
-        store.characters = response.data;
+        store.characters = response.data.data;
       });
     },
   },
