@@ -8,7 +8,7 @@ export default {
   },
 
   props: {
-    characters: Object,
+    character: Object,
   },
 
   methods: {},
@@ -16,33 +16,31 @@ export default {
 </script>
 
 <template>
-  <div class="row row-cols-3 g-3">
-    <div class="col" v-for="character in characters">
-      <div class="card h-100">
-        <img :src="character.image" class="card-img-top" alt="..." />
+  <div class="card h-100">
+    <router-link :to="{ name: 'character.show', params: { id: character.id } }">
+      <img :src="character.image" class="card-img-top" alt="..." />
+    </router-link>
 
-        <div class="card-body">
-          <h5 class="card-title">{{ character.name }}</h5>
-          <p class="card-text">
-            {{ character.description }}
-          </p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <strong>Attacco: </strong>{{ character.attack }}
-          </li>
-          <li class="list-group-item">
-            <strong>Difesa: </strong>{{ character.defense }}
-          </li>
-          <li class="list-group-item">
-            <strong>Velocità: </strong>{{ character.speed }}
-          </li>
-          <li class="list-group-item">
-            <strong>Vita: </strong>{{ character.life }}
-          </li>
-        </ul>
-      </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ character.name }}</h5>
+      <p class="card-text">
+        {{ character.description }}
+      </p>
     </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <strong>Attacco: </strong>{{ character.attack }}
+      </li>
+      <li class="list-group-item">
+        <strong>Difesa: </strong>{{ character.defense }}
+      </li>
+      <li class="list-group-item">
+        <strong>Velocità: </strong>{{ character.speed }}
+      </li>
+      <li class="list-group-item">
+        <strong>Vita: </strong>{{ character.life }}
+      </li>
+    </ul>
   </div>
 </template>
 

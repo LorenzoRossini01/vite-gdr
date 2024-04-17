@@ -9,6 +9,7 @@ export default {
       store,
       title: "GDR",
       n_character: "",
+      character: null,
     };
   },
 
@@ -18,31 +19,29 @@ export default {
 
   computed: {
     apiEndpoint() {
-      return api.baseUrl + `character`;
+      return api.baseUrl + `character/${this.$route.params.id}`;
     },
   },
 
   methods: {
-    fetchCharacters(endpoint = this.apiEndpoint) {
+    fetchCharacter(endpoint = this.apiEndpoint) {
       axios.get(endpoint).then((response) => {
-        // console.log(response.data);
+        console.log(response.data);
         store.characters = response.data.data;
       });
     },
   },
 
   created() {
-    this.fetchCharacters();
+    this.fetchCharacter();
   },
 };
 </script>
 
 <template>
   <h1>{{ title }}</h1>
-  <div class="row row-cols-3 g-3">
-    <div class="col" v-for="character in store.characters">
-      <CharacterCardList :character="character"></CharacterCardList>
-    </div>
+  <div class="row">
+    <CharacterCardList :character="character"></CharacterCardList>
   </div>
 </template>
 
