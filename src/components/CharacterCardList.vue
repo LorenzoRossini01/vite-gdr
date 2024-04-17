@@ -11,9 +11,7 @@ export default {
     characters: Object,
   },
 
-  methods: {
-
-  }
+  methods: {},
 };
 </script>
 
@@ -21,9 +19,8 @@ export default {
   <div class="row row-cols-3 g-3">
     <div class="col" v-for="character in characters">
       <div class="card h-100">
-      
         <img :src="character.image" class="card-img-top" alt="..." />
-       
+
         <div class="card-body">
           <h5 class="card-title">{{ character.name }}</h5>
           <p class="card-text">
@@ -44,10 +41,6 @@ export default {
             <strong>Vita: </strong>{{ character.life }}
           </li>
         </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
       </div>
     </div>
   </div>

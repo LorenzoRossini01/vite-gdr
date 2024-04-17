@@ -2,6 +2,7 @@
 import axios from "axios";
 import { api, store } from "./store";
 import CharacterCardList from "./components/CharacterCardList.vue";
+import AppHeader from "./components/partials/AppHeader.vue";
 
 export default {
   data() {
@@ -14,36 +15,15 @@ export default {
 
   components: {
     CharacterCardList,
-  },
-
-  computed: {
-    apiEndpoint() {
-      return api.baseUrl + `character`;
-    },
-  },
-
-  methods: {
-    fetchCharacters(endpoint = this.apiEndpoint) {
-      axios.get(endpoint).then((response) => {
-        console.log(response.data);
-        store.characters = response.data.data;
-      });
-    },
+    AppHeader,
   },
 };
 </script>
 
 <template>
+  <AppHeader></AppHeader>
   <div class="container">
-    <h1>{{ title }}</h1>
-
-    <div class="row">
-      <input type="number" name="" v-model="n_character" class="form-control" />
-      <div class="btn btn-primary mt-2" @click="fetchCharacters()">
-        Genera personaggi
-      </div>
-      <CharacterCardList :characters="store.characters"></CharacterCardList>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
