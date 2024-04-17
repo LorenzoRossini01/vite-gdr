@@ -40,7 +40,7 @@ export default {
 
 <template>
   <h1>{{ title }}</h1>
-  <div class="row">
+  <div class="row row-cols-2 g-2">
     <div class="col">
       <div class="card h-100">
         <img :src="character.image" class="card-img-top" alt="..." />
