@@ -49,7 +49,7 @@ export default {
             Math.floor(Math.random() * this.characters.length) + 1;
           this.userAtk = this.character.attack;
           this.cpuDef = this.characters[this.cpuIndex].defense;
-        }, 1500);
+        }, 2000);
       }
     },
     play() {
