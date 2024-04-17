@@ -27,7 +27,7 @@ export default {
     fetchCharacter(endpoint = this.apiEndpoint) {
       axios.get(endpoint).then((response) => {
         console.log(response.data);
-        store.characters = response.data.data;
+        this.character = response.data;
       });
     },
   },
@@ -41,7 +41,32 @@ export default {
 <template>
   <h1>{{ title }}</h1>
   <div class="row">
-    <CharacterCardList :character="character"></CharacterCardList>
+    <div class="col">
+      <div class="card h-100">
+        <img :src="character.image" class="card-img-top" alt="..." />
+
+        <div class="card-body">
+          <h5 class="card-title">{{ character.name }}</h5>
+          <p class="card-text">
+            {{ character.description }}
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>Attacco: </strong>{{ character.attack }}
+          </li>
+          <li class="list-group-item">
+            <strong>Difesa: </strong>{{ character.defense }}
+          </li>
+          <li class="list-group-item">
+            <strong>Velocità: </strong>{{ character.speed }}
+          </li>
+          <li class="list-group-item">
+            <strong>Vita: </strong>{{ character.life }}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
