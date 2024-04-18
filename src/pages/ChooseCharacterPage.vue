@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       store,
-      title: "GDR",
+      title: "SELEZIONA UN PERSONAGGIO",
       n_character: "",
     };
   },
@@ -38,8 +38,8 @@ export default {
 </script>
 
 <template>
-  <h1>{{ title }}</h1>
-  <div class="row row-cols-3 g-3">
+  <h1 class="text-center">{{ title }}</h1>
+  <div class="row row-cols-3 my-3 g-3">
     <div class="col" v-for="character in store.characters">
       <CharacterCardList :character="character"></CharacterCardList>
     </div>
