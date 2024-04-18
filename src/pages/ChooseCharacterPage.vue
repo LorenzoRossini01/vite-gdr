@@ -25,8 +25,8 @@ export default {
   methods: {
     fetchCharacters(endpoint = this.apiEndpoint) {
       axios.get(endpoint).then((response) => {
-        // console.log(response.data);
-        store.characters = response.data.data;
+        console.log(response.data);
+        store.characters = response.data;
       });
     },
   },
@@ -39,7 +39,7 @@ export default {
 
 <template>
   <h1 class="mt-4 title">{{ title }}</h1>
-  <div class="row row-cols-3 my-3 g-3">
+  <div class="row row-cols-4 my-3 g-3 justify-content-center">
     <div class="col" v-for="character in store.characters">
       <CharacterCardList :character="character"></CharacterCardList>
     </div>

@@ -29,7 +29,7 @@ export default {
     },
 
     cpuIndex() {
-      return Math.floor(Math.random() * this.characters.length) + 1;
+      return Math.floor(Math.random() * this.characters.length);
     },
   },
 
@@ -41,7 +41,7 @@ export default {
       });
       axios.get(api.baseUrl + `character`).then((response) => {
         console.log("Characters " + response.data);
-        this.characters = response.data.data;
+        this.characters = response.data;
       });
       this.loaded = true;
     },
@@ -108,7 +108,7 @@ export default {
       <!-- USER CARD -->
       <div class="col">
         <h2 class="text-center">Player stats</h2>
-        <div class="card h-100">
+        <div class="card h-100" data-bs-theme="light">
           <img :src="character.image" class="card-img-top" alt="..." />
 
           <div class="card-body">
@@ -137,7 +137,7 @@ export default {
       <div class="col">
         <h2 class="text-center">Cpu stats</h2>
 
-        <div class="card h-100">
+        <div class="card h-100" data-bs-theme="light">
           <img
             :src="characters[cpuIndex].image"
             class="card-img-top"
