@@ -86,6 +86,12 @@ export default {
 </script>
 
 <template>
+  <router-link :to="{ name: 'char-list' }" class="go-back">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/17/17699.png"
+      class="img-fluid"
+      alt=""
+  /></router-link>
   <div class="off-canvas" v-if="!loaded">
     <img
       src="https://cdn.discordapp.com/attachments/1230468451102097478/1230476208014098483/loading-animation.gif?ex=66337545&is=66210045&hm=5f44f141b6690384153e93da18319cbbe67b95cc5364e4106055ac1281c89cb7&"
@@ -189,6 +195,16 @@ export default {
 
 <style lang="scss">
 @use "/src/scss/general.scss";
+.go-back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 50px;
+  height: 50px;
+  img {
+    filter: invert(1);
+  }
+}
 
 .off-canvas {
   background-color: white;
