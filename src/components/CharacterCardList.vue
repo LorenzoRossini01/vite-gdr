@@ -39,7 +39,7 @@ export default {
               <strong>Attacco: </strong>{{ character.attack }}
             </li>
             <li class="list-group-item">
-              <strong>Difesa: </strong>{{ character.defense }}
+              <strong>Difesa: </strong>{{ character.defence }}
             </li>
             <li class="list-group-item">
               <strong>Velocità: </strong>{{ character.speed }}

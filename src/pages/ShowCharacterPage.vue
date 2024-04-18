@@ -51,15 +51,15 @@ export default {
           // this.cpuIndex =
 
           this.userAtk = this.character.attack;
-          this.cpuDef = this.characters[this.cpuIndex].defense;
+          this.cpuDef = this.characters[this.cpuIndex].defence;
         }, 1500);
       }
     },
     play() {
-      if (this.character.attack > this.characters[this.cpuIndex].defense) {
+      if (this.character.attack > this.characters[this.cpuIndex].defence) {
         this.result = "Hai vinto!";
       } else if (
-        this.character.attack < this.characters[this.cpuIndex].defense
+        this.character.attack < this.characters[this.cpuIndex].defence
       ) {
         this.result = "Hai perso!";
       } else {
@@ -122,7 +122,7 @@ export default {
               <strong>Attacco: </strong>{{ character.attack }}
             </li>
             <li class="list-group-item">
-              <strong>Difesa: </strong>{{ character.defense }}
+              <strong>Difesa: </strong>{{ character.defence }}
             </li>
             <li class="list-group-item">
               <strong>Velocità: </strong>{{ character.speed }}
@@ -155,7 +155,7 @@ export default {
               <strong>Attacco: </strong>{{ characters[cpuIndex].attack }}
             </li>
             <li class="list-group-item">
-              <strong>Difesa: </strong>{{ characters[cpuIndex].defense }}
+              <strong>Difesa: </strong>{{ characters[cpuIndex].defence }}
             </li>
             <li class="list-group-item">
               <strong>Velocità: </strong>{{ characters[cpuIndex].speed }}
