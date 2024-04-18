@@ -43,7 +43,6 @@ export default {
         console.log("Characters " + response.data);
         this.characters = response.data;
       });
-      this.loaded = true;
     },
     cpuGen() {
       if (this.loaded) {
@@ -54,6 +53,14 @@ export default {
           this.cpuDef = this.characters[this.cpuIndex].defence;
         }, 1500);
       }
+    },
+
+    loader() {
+      console.log(this.loaded);
+      setTimeout(() => {
+        this.loaded = true;
+        console.log(this.loaded);
+      }, 2500);
     },
     play() {
       if (this.character.attack > this.characters[this.cpuIndex].defence) {
@@ -73,11 +80,21 @@ export default {
   created() {
     this.fetchCharacter();
     this.cpuGen();
+    this.loader();
   },
 };
 </script>
 
 <template>
+  <div class="off-canvas" v-if="!loaded">
+    <img
+      src="https://cdn.discordapp.com/attachments/1230468451102097478/1230476208014098483/loading-animation.gif?ex=66337545&is=66210045&hm=5f44f141b6690384153e93da18319cbbe67b95cc5364e4106055ac1281c89cb7&"
+      alt=""
+    />
+    <div>
+      <h2>Loading...</h2>
+    </div>
+  </div>
   <h1 class="title my-4">{{ title }}</h1>
   <button class="btn btn-primary w-100 mb-3" @click="play()">FIGHT!</button>
   <div class="container fight-container mb-3">
@@ -172,6 +189,23 @@ export default {
 
 <style lang="scss">
 @use "/src/scss/general.scss";
+
+.off-canvas {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    color: black;
+  }
+}
 
 .fight-container {
   position: relative;
