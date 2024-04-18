@@ -2,7 +2,7 @@
 import axios from "axios";
 import { api, store } from "../store";
 import CharacterCardList from "../components/CharacterCardList.vue";
-
+//DATA
 export default {
   data() {
     return {
