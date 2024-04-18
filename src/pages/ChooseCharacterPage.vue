@@ -38,7 +38,7 @@ export default {
 </script>
 
 <template>
-  <h1 class="text-center">{{ title }}</h1>
+  <h1 class="mt-4 title">{{ title }}</h1>
   <div class="row row-cols-3 my-3 g-3">
     <div class="col" v-for="character in store.characters">
       <CharacterCardList :character="character"></CharacterCardList>

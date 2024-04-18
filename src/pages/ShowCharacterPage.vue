@@ -78,7 +78,7 @@ export default {
 </script>
 
 <template>
-  <h1 class="title">{{ title }}</h1>
+  <h1 class="title my-4">{{ title }}</h1>
   <button class="btn btn-primary w-100 mb-3" @click="play()">FIGHT!</button>
   <div class="container fight-container mb-3">
     <div class="result" v-if="showRes">
@@ -172,11 +172,6 @@ export default {
 
 <style lang="scss">
 @use "/src/scss/general.scss";
-
-.title {
-  text-align: center;
-  font-family: fantasy;
-}
 
 .fight-container {
   position: relative;
